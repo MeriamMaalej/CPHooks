@@ -1,7 +1,6 @@
 import React,{useState} from "react";
 import {Card,ProgressBar} from "react-bootstrap";
 import Rating from '@material-ui/lab/Rating';
-
 function MovieCard (props){
   const [value,setValue]= useState(0)
 return (
