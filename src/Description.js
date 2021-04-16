@@ -1,24 +1,23 @@
 import React from "react";
 import { Link, Route } from 'react-router-dom';
 export default function Description ({ match,data}){
-  var movie= data.find(p => p.id == match.params.id);
-  var movieData;
+  var food= data.find(p => p.id == match.params.id);
+  var foodData;
 
-  if(movie)
-  movieData = <div>
-    <img src ={movie.img} />
-   <h3> {movie.title}</h3> 
-    <p> {movie.describe}</p>
-    <hr/>
-    <h4> {movie.link}</h4> </div>;
+  if(food)
+  foodData = <div className="photo">
+   <p><h1 className="titre"> {food.title}</h1> </p>
+  <p className="image"><img  style={{ width: '30rem' , marginBottom : 40}} src={food.img}/> </p>
+<h3 className="p"> <h1 style={{color: 'purple'}}>Ingredients  </h1>{food.ingredients} </h3> 
+ <p><h4 className="lien"><h1 className="link" style={{color: 'purple'}}> How to prepare </h1>{food.link}</h4> </p> </div>;
   else 
-  movieData = <h2> Sorry. Movie doesnt exist </h2>;
+  foodData = <h2> Sorry. This doesnt exist </h2>;
 
 return (
-    <div>
-     <div>
-       {movieData}
-     </div>
+    <div >
+       <div>
+       {foodData}
+      </div>
     </div>
   )
     }
